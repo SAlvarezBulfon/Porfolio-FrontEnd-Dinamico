@@ -18,6 +18,16 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { SkillsComponent } from './componentes/skills/skills.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { IndexComponent } from './componentes/index/index.component';
+import {HttpClientModule} from '@angular/common/http';
+import{FormsModule} from '@angular/forms';
+//external modules
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { AgregarEducacionComponent } from './componentes/agregar-educacion/agregar-educacion.component';
+import { AgregarExperienciaComponent } from './componentes/agregar-experiencia/agregar-experiencia.component';
+import { AgregarProyectoComponent } from './componentes/agregar-proyecto/agregar-proyecto.component';
+
+
 
 @NgModule({
   declarations: [
@@ -36,11 +46,18 @@ import { IndexComponent } from './componentes/index/index.component';
     ProyectosComponent,
     SkillsComponent,
     FooterComponent,
-    IndexComponent
+    IndexComponent,
+    AgregarEducacionComponent,
+    AgregarExperienciaComponent,
+    AgregarProyectoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
