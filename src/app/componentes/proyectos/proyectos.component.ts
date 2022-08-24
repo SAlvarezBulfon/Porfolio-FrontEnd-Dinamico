@@ -16,11 +16,10 @@ export class ProyectosComponent implements OnInit {
     this.cargarProyectos();
   }
   cargarProyectos(){
-    this.proyectoService.getProjects().subscribe(
-      res => {
-        this.proyectos = res;
-      },
-      err => console.log(err)
-    );
+    this.proyectoService.getProjects().subscribe(data => {
+      this.proyectos = data;
+    }, err => {
+      console.log(err);
+    } );
   }
 }

@@ -8,31 +8,30 @@ import { Proyecto } from '../models/proyecto';
 })
 export class ProyectoService {
 
-  proyectoURL = 'http://localhost:3000/proyectos/';
+  proyectoURL = 'http://localhost:8080/proyecto/';
 
   constructor(private HttpClient: HttpClient) { }
 
+  //Devuelve todos los proyectos
   public getProjects(): Observable<Proyecto[]> {
-    return this.HttpClient.get<Proyecto[]>(this.proyectoURL + 'getProjects');
+    return this.HttpClient.get<Proyecto[]>(this.proyectoURL + 'proyectos');
   }
 
+//añadir un proyecto
   public addProject(proyecto: Proyecto): Observable<any>{
-    return this.HttpClient.post<any>(this.proyectoURL + 'new', 
-    proyecto)
+    return this.HttpClient.post<any>(this.proyectoURL + 'create', proyecto);
   }
-
+//editar un proyecto
   public editProject(id: number, proyecto: Proyecto): Observable<any>{
     return this.HttpClient.put<any>(this.proyectoURL + `edit/${id}`, proyecto);
   }
-
+//eliminar un proyecto
   public deleteProject(id: number): Observable<any>{
     return this.HttpClient.delete<any>(this.proyectoURL + `delete/${id}`);
   }
-
+//Devuelve un proyecto
   public detailsProject(id: number): Observable<Proyecto> {
     return this.HttpClient.get<Proyecto>(this.proyectoURL + `details/${id}`);
   }
-  public updateProject(id: number, proyecto: Proyecto): Observable<any>{
-    return this.HttpClient.put<any>(this.proyectoURL + `update/${id}`, proyecto);
-  }
+  
 }

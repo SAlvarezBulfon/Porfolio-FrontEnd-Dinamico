@@ -1,112 +1,20 @@
 <!--Proyectos-->
     <section id="proyectos" class="row g-0 ">
 
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-6" *ngFor="let proyecto of proyectos">
             <div class="proyecto">
-                    <img src="../../../assets/Encriptador.png" alt="Proyecto">
+                    <img src="{{proyecto.url_image}}" alt="Proyecto">
                     <div class="proyecto-overlay">
                         <div>
-                            <h4>Encriptador de texto</h4>
-                            <p>Challenge llevado a cabo en el programa ONE (Oracle Next Education). 
-                              Durante este reto debíamos construir un encriptador tal que al colocar texto en un textarea y apretar el boton "Encriptar" el mismo iba a ser encriptado a partir de una serie de reglas. También se debía poder copiar y desencriptar el texto.
-                            </p>
+                            <h4>{{proyecto.name}}</h4>
+                            <p>{{proyecto.description}}</p>
                             <div class="d-flex fs-4 align-items-center">
-                                <a href="https://salvarezbulfon.github.io/Encriptador/" target="_blank" class="link-proyecto fs-4"><i title="Ver proyecto" class="fa-solid fa-link me-2"></i></a>
+                                <a href="{{proyecto.url_sourceCode}}" target="_blank" class="link-proyecto fs-4"><i title="Ver proyecto" class="fa-solid fa-link me-2"></i></a>
                                 <button class="btn claro" data-bs-toggle="modal" data-bs-target="#agregar-proyecto"><i class="fa-solid fa-plus icon-edit"></i></button>
-                                <button class="btn claro" data-bs-toggle="modal" data-bs-target="#edit-proyecto"><i class="fa-solid fa-pen-to-square icon-edit"></i></button>
+                                <button class="btn claro" data-bs-toggle="modal" data-bs-target="#edit-proyecto" routerLink="/editar/{{proyecto.id}}" ><i class="fa-solid fa-pen-to-square icon-edit"></i></button>
                             </div>
                         </div>
                     </div>
             </div>
         </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="proyecto">
-                        <img src="../../../assets/todo-list.png" alt="Proyecto">
-                        <div class="proyecto-overlay">
-                            <div>
-                                <h4>To Do List</h4>
-                                <p>
-                                  Reto realizado en el programa Talento Joven - ITBA. Como caso de estudio debíamos realizar una página que nos generara una lista de tareas a partir de las que el usuario ingresaba.
-                                </p>
-                                <div class="d-flex fs-4 align-items-center">
-                                  <a href="https://salvarezbulfon.github.io/To-Do-List/" class="link-proyecto fs-4" target="_blank"><i title="Ver proyecto" class="fa-solid fa-link me-2"></i></a>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#agregar-proyecto"><i class="fa-solid fa-plus icon-edit"></i></button>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#edit-proyecto"><i class="fa-solid fa-pen-to-square icon-edit"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="proyecto">
-                        <img src="../../../assets/appGastos.png" alt="Proyecto">
-                        <div class="proyecto-overlay">
-                            <div>
-                                <h4>App de Gastos</h4>
-                                <p>Reto realizado en el programa Talento Joven - ITBA. Esta vez lo que se debía hacer era una página que a través de los montos ingresados por cada persona calculara el total a pagar y el promedio de cuánto se debería pagar por persona.</p>
-                                <div class="d-flex fs-4 align-items-center">
-                                  <a href="https://salvarezbulfon.github.io/App-de-Gastos/" class="link-proyecto fs-4"><i title="Ver proyecto" class="fa-solid fa-link me-2"></i></a>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#agregar-proyecto"><i class="fa-solid fa-plus icon-edit"></i></button>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#edit-proyecto"><i class="fa-solid fa-pen-to-square icon-edit"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="proyecto">
-                        <img src="../../../assets/ONE-portfolio.png" alt="Proyecto">
-                        <div class="proyecto-overlay">
-                            <div>
-                                <h4 >PortFolio</h4>
-                                <p>Challenge de la ruta de Frontend del programa ONE. El portfolio debía contener las secciones de Inicio, Sobre mí,  Experiencia, Portfolio y Contacto. El formulario de contacto debía tener validación para los datos ingresados por el usuario.</p>
-                                <div class="d-flex fs-4 align-items-center">
-                                  <a href="https://salvarezbulfon.github.io/ONE-PortFolio/" class="link-proyecto fs-4" target="_blank"><i title="Ver proyecto" class="fa-solid fa-link me-2"></i></a>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#agregar-proyecto"><i class="fa-solid fa-plus icon-edit"></i></button>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#edit-proyecto"><i class="fa-solid fa-pen-to-square icon-edit"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="proyecto">
-                        <img src="../../../assets/login.png" alt="Proyecto">
-                        <div class="proyecto-overlay">
-                            <div>
-                                <h4>Login</h4>
-                                <p>Práctica con NodeJs. En este proyecto me dispuse a aprender cómo podría realizar un login. Utilicé un motor de plantillas ejs para poder realizar el proyecto con mayor facilidad.</p>
-                                <div class="d-flex fs-4 align-items-center">
-                                  <a href="https://github.com/SAlvarezBulfon/Login" class="link-proyecto fs-4" target="_blank"><i title="Ver proyecto" class="fa-solid fa-link me-2"></i></a>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#agregar-proyecto"><i class="fa-solid fa-plus icon-edit"></i></button>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#edit-proyecto"><i class="fa-solid fa-pen-to-square icon-edit"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="proyecto">
-                        <img src="../../../assets/calendar.png" alt="Proyecto">
-                        <div class="proyecto-overlay">
-                            <div>
-                                <h4>Calendario</h4>
-                                <p>Práctica de Backend con Node Js. Es un calendario donde el usuario debe poder logearse, registrarse, agregar y editar eventos.</p>
-                                <div class="d-flex fs-4 align-items-center">
-                                  <a href="https://github.com/SAlvarezBulfon/Calendario" target="_blank" class="link-proyecto fs-4"><i title="Ver proyecto" class="fa-solid fa-link me-2"></i></a>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#agregar-proyecto"><i class="fa-solid fa-plus icon-edit"></i></button>
-                                  <button class="btn claro" data-bs-toggle="modal" data-bs-target="#edit-proyecto"><i class="fa-solid fa-pen-to-square icon-edit"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-
     </section>
