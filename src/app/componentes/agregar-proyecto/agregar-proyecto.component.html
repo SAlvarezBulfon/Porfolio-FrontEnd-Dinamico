@@ -2,33 +2,33 @@
 <!-- Agregar Proyectos -->
 <div class="modal fade" id="agregar-proyecto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
+      <form class="modal-content" (ngSubmit)="onCreate()" novalidate #f="ngForm">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Añadir nuevo proyecto</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="input-group mb-3 input-content">
-            <label for="img-proyecto" class="input-label">URL Imagen del Proyecto</label>
-            <input type="url" class="input" name="img-proyecto">
+            <label for="url_image" class="input-label">URL Imagen del Proyecto</label>
+            <input type="url" class="input" name="url_image"[(ngModel)]="url_image" required >
           </div>
           <div class="input-group mb-3 input-content">
-            <label for="url-proyecto" class="input-label">URL del Proyecto</label>
-            <input type="url" class="input" name="url-proyecto">
+            <label for="url_sourceCode" class="input-label">URL del Proyecto</label>
+            <input type="url" class="input" name="url_sourceCode" [(ngModel)]="url_sourceCode" required>
           </div>
           <div class="input-content mb-3">
-            <label for="titulo-proyecto" class="input-label">Título</label>
-            <input type="text" name="titulo-proyecto" class="input" required minlength="6">
+            <label for="name" class="input-label">Título</label>
+            <input type="text" name="name" class="input" [(ngModel)]="name" required minlength="6">
           </div>
           <div class="input-content mb-3 mt-2">
-            <label for="des-proyecto" class="input-label">Descripción</label>
-            <textarea name="des-proyecto" class="input" required minlength="6" maxlength="20" col="0" row="20"></textarea>
+            <label for="description" class="input-label">Descripción</label>
+            <textarea name="description" class="input" [(ngModel)]="description" required minlength="6" col="0" row="20"></textarea>
           </div>
         </div>
         
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Agregar</button>
+          <button class="btn btn-primary" [disabled]="!f.valid">Agregar</button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
