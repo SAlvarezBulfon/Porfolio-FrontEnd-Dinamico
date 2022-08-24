@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Proyecto } from 'src/app/models/proyecto';
+import { ProyectoService } from 'src/app/service/proyecto.service';
 
 @Component({
   selector: 'app-editar-proyectos',
@@ -6,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editar-proyectos.component.css']
 })
 export class EditarProyectosComponent implements OnInit {
+/*   proyecto: Proyecto = null; */
+  constructor(private proyectoService: ProyectoService,
+    private toastr: ToastrService,
+    private activatedRoute: ActivatedRoute ) { }
 
-  constructor() { }
+
+
 
   ngOnInit(): void {
-  }
 
+  }
 }
