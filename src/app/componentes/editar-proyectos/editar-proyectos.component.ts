@@ -10,13 +10,10 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./editar-proyectos.component.css']
 })
 export class EditarProyectosComponent implements OnInit {
-/*   proyecto: Proyecto = null; */
+  proyecto!: Proyecto;
   constructor(private proyectoService: ProyectoService,
     private toastr: ToastrService,
     private activatedRoute: ActivatedRoute ) { }
-
-
-
 
   ngOnInit(): void {
 
