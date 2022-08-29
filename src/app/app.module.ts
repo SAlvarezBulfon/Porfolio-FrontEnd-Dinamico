@@ -26,7 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AgregarEducacionComponent } from './componentes/agregar-educacion/agregar-educacion.component';
 import { AgregarExperienciaComponent } from './componentes/agregar-experiencia/agregar-experiencia.component';
 import { AgregarProyectoComponent } from './componentes/agregar-proyecto/agregar-proyecto.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -57,7 +57,8 @@ import { AgregarProyectoComponent } from './componentes/agregar-proyecto/agregar
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

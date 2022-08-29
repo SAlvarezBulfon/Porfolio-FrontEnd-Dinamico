@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/models/proyecto';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-index',
@@ -9,9 +10,10 @@ import { Proyecto } from 'src/app/models/proyecto';
 export class IndexComponent implements OnInit {
 
   proyectos: Proyecto[] = [];
-
-  constructor() { }
+  admin?: boolean = false;
+  constructor(private login: LoginService) { }
 
   ngOnInit(): void {
+    this.admin = this.login.getAdmin();
   }
 }

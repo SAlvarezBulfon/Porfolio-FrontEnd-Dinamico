@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Proyecto } from 'src/app/models/proyecto';
+import { LoginService } from 'src/app/service/login.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 
 @Component({
@@ -12,11 +13,16 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
 export class ProyectosComponent implements OnInit {
 
   proyectos: Proyecto[] = [];
+  admin?: boolean;
   constructor(private proyectoService: ProyectoService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private login: LoginService) { 
+      this.admin = this.login.getAdmin();
+    }
 
   ngOnInit(): void {
     this.cargarProyectos();
+    console.log(this.admin);
   }
   cargarProyectos(){
     this.proyectoService.getProjects().subscribe(data => {
