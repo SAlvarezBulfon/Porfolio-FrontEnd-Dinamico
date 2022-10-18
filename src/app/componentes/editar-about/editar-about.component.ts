@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AboutService } from 'src/app/service/about.service';
 
 @Component({
   selector: 'app-editar-about',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarAboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(    private aboutService: AboutService,
+    private toastr: ToastrService,
+    private activatedRoute: ActivatedRoute) {
+   }
 
   ngOnInit(): void {
+    const id = this.activatedRoute.snapshot.params['id'];
+    alert(id);
   }
 
 }

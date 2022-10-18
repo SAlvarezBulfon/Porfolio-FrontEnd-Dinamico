@@ -16,6 +16,5 @@ export class EditarProyectosComponent implements OnInit {
     private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
-
   }
 }

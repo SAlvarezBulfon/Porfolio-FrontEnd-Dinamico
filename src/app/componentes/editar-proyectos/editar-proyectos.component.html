@@ -22,12 +22,12 @@
           </div>
           <div class="input-content mb-3 mt-2">
             <label for="des-proyecto" class="input-label">Descripción</label>
-            <textarea name="des-proyecto" class="input" required minlength="6" maxlength="20" col="0" row="20"></textarea>
+            <textarea name="des-proyecto" class="input" required minlength="6" col="0" row="20"></textarea>
           </div>
         </div>
         
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Editar</button>
+          <button type="button" class="btn btn-primary" routerLink="/editar/{{proyecto.id}}">Editar</button>
         </div>
       </div>
     </div>
