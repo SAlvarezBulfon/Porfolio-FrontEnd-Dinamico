@@ -28,12 +28,12 @@ export class AgregarProyectoComponent implements OnInit {
     this.proyectoService.addProject(proyecto).subscribe(data => {
       this.toastr.success('Proyecto creado correctamente','OK', {
         timeOut: 3000,
-      });
+      });window.location.reload();
       this.router.navigate(['/proyectos']);
     }, err => {
       this.toastr.error(err.error.mensaje,'Fail', {
         timeOut: 3000,
-      });
+      });window.location.reload();
       this.router.navigate(['/proyectos']);
     } );
   }

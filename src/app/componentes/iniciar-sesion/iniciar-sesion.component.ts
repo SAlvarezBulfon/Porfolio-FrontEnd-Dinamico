@@ -8,6 +8,7 @@ import { LoginService } from 'src/app/service/login.service';
   styleUrls: ['./iniciar-sesion.component.css']
 })
 export class IniciarSesionComponent implements OnInit {
+  admin?: boolean;
   username?: string;
   password?: string;
   constructor(private login: LoginService,
@@ -19,11 +20,16 @@ export class IniciarSesionComponent implements OnInit {
 
   loginUser(){
     if(this.username== 'admin' && this.password== 'admin'){
-      this.login.setAdmin(true);
+      this.admin = true;
+      localStorage.setItem('admin', '1');
       console.log(this.username, this.login.getAdmin());
+      window.location.reload();
     }else{
-      this.login.setAdmin(false);
+      this.admin = false;
+      localStorage.setItem('admin', '0');
+      window.location.reload();
     }
   }
+
 
 }

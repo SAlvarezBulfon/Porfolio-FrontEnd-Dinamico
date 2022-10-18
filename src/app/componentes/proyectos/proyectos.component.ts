@@ -13,16 +13,17 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
 export class ProyectosComponent implements OnInit {
 
   proyectos: Proyecto[] = [];
-  admin?: boolean;
+  admin?: any;
   constructor(private proyectoService: ProyectoService,
     private toastr: ToastrService,
     private login: LoginService) { 
-      this.admin = this.login.getAdmin();
+    
     }
 
   ngOnInit(): void {
     this.cargarProyectos();
     console.log(this.admin);
+    this.admin = localStorage.getItem('admin');
   }
   cargarProyectos(){
     this.proyectoService.getProjects().subscribe(data => {
@@ -43,5 +44,9 @@ export class ProyectosComponent implements OnInit {
         timeOut: 3000,
       });
     } );
+  }
+
+  setearId(id: number){
+    this.proyectoService.setId(id);
   }
 }

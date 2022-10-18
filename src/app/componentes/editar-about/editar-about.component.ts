@@ -9,15 +9,13 @@ import { AboutService } from 'src/app/service/about.service';
   styleUrls: ['./editar-about.component.css']
 })
 export class EditarAboutComponent implements OnInit {
+  
 
   constructor(    private aboutService: AboutService,
     private toastr: ToastrService,
     private activatedRoute: ActivatedRoute) {
    }
 
-  ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.params['id'];
-    alert(id);
-  }
+  ngOnInit(): void {}
 
 }

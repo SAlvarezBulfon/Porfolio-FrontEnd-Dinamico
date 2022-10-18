@@ -10,7 +10,8 @@
                         <li class="nav-item"><a class="nav-link " href="#resumen">Resumen</a></li>
                         <li class="nav-item"><a class="nav-link " href="#proyectos">Proyectos</a></li>
                         <li class="nav-item"><a class="nav-link " href="#skills">Skills</a></li>
-                        <li class="nav-item ms-2"><button class="button1" data-bs-toggle="modal" data-bs-target="#inicio-sesion">Iniciar Sesión</button></li>
+                        <li class="nav-item ms-2"><button class="button1" data-bs-toggle="modal" data-bs-target="#inicio-sesion" *ngIf="admin == '0' || admin == undefined">Iniciar Sesión</button></li>
+                        <li class="nav-item ms-2"><button class="button1" (click)="logoutUser()" *ngIf="admin == '1'">Cerrar Sesión</button></li>
                     </ul>
                 </div>
             </div>

@@ -8,26 +8,28 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div class="input-group mb-3 input-content">
-            <label for="img-proyecto" class="input-label">URL Imagen del Proyecto</label>
-            <input type="url" class="input" name="img-proyecto">
-          </div>
-          <div class="input-group mb-3 input-content">
-            <label for="url-proyecto" class="input-label">URL del Proyecto</label>
-            <input type="url" class="input" name="url-proyecto">
-          </div>
-          <div class="input-content mb-3">
-            <label for="titulo-proyecto" class="input-label">Título</label>
-            <input type="text" name="titulo-proyecto" class="input" required minlength="6">
-          </div>
-          <div class="input-content mb-3 mt-2">
-            <label for="des-proyecto" class="input-label">Descripción</label>
-            <textarea name="des-proyecto" class="input" required minlength="6" col="0" row="20"></textarea>
-          </div>
+          <form action=""[formGroup]="editarProyecto">
+            <div class="input-group mb-3 input-content">
+              <label for="img-proyecto" class="input-label">URL Imagen del Proyecto</label>
+              <input type="url" class="input" name="img-proyecto" formControlName="url_image">
+            </div>
+            <div class="input-group mb-3 input-content">
+              <label for="url-proyecto" class="input-label">URL del Proyecto</label>
+              <input type="url" class="input" name="url-proyecto" formControlName="url_sourceCode">
+            </div>
+            <div class="input-content mb-3">
+              <label for="titulo-proyecto" class="input-label">Título</label>
+              <input type="text" name="titulo-proyecto" class="input" required minlength="6" formControlName="name">
+            </div>
+            <div class="input-content mb-3 mt-2">
+              <label for="des-proyecto" class="input-label">Descripción</label>
+              <textarea name="des-proyecto" class="input" required minlength="6" col="0" row="20" formControlName="description"></textarea>
+            </div>
+          </form>
         </div>
         
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" routerLink="/editar/{{proyecto.id}}">Editar</button>
+          <button type="button" class="btn btn-primary" (click)="onUpdate()">Editar</button>
         </div>
       </div>
     </div>

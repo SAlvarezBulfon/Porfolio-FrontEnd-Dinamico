@@ -34,4 +34,11 @@ export class ProyectoService {
     return this.HttpClient.get<Proyecto>(this.proyectoURL + `details/${id}`);
   }
   
+  public setId(id: number){
+    localStorage.setItem('id', id.toString());
+  }
+
+  public getId(){
+    return localStorage.getItem('id');
+  }
 }

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  admin?: any;
   constructor() { }
 
   ngOnInit(): void {
+    this.admin = localStorage.getItem('admin');
   }
-
+  logoutUser(){
+    localStorage.setItem('admin', '0');
+    window.location.reload();
+  }
 }
