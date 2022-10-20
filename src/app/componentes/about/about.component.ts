@@ -8,11 +8,14 @@ import { AboutService } from 'src/app/service/about.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  admin:any;
   about: About[] = [];
   constructor(private aboutService: AboutService) { }
 
   ngOnInit(): void {
     this.cargarAbout();
+    console.log(this.admin);
+    this.admin = localStorage.getItem('admin');
   }
 
   cargarAbout():void{
@@ -24,5 +27,9 @@ export class AboutComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  setearId(id: number){
+    this.aboutService.setId(id);
   }
 }

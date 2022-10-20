@@ -40,7 +40,7 @@ export class EditarProyectosComponent implements OnInit {
         timeOut: 3000,
       }); window.location.reload();
     }, err => {
-      this.toastr.error(err.error.mensaje,'Fail', {
+      this.toastr.error(err.error.mensaje,'No se pudo editar el proyecto', {
         timeOut: 3000,
       });window.location.reload();
     } );

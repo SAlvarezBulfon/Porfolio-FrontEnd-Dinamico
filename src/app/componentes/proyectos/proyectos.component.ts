@@ -40,7 +40,7 @@ export class ProyectosComponent implements OnInit {
       });
       this.cargarProyectos();
     } , err => {
-      this.toastr.error(err.error.mensaje,'Fail', {
+      this.toastr.error(err.error.mensaje,'No se pudo eliminar el proyecto', {
         timeOut: 3000,
       });
     } );

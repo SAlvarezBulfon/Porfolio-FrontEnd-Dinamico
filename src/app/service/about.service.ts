@@ -28,4 +28,11 @@ export class AboutService {
   public deleteAbout(id: number): Observable<any>{
     return this.httpClient.delete<any>(this.aboutURL + `delete/${id}`);
   }
+  public setId(id: number){
+    localStorage.setItem('id', id.toString());
+  }
+
+  public getId(){
+    return localStorage.getItem('id');
+  }
 }

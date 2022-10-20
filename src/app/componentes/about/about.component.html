@@ -9,7 +9,7 @@
         </div>
 
         <div class="col-6 align-self-end">
-           <button class="btn edit-btn edit-btn-claro float-end claro" data-bs-toggle="modal" data-bs-target="#edit-about" routerLink="/editarAbout/{{about.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
+           <button class="btn edit-btn edit-btn-claro float-end claro" data-bs-toggle="modal" data-bs-target="#edit-about" routerLink="/editarAbout/{{about.id}}" *ngIf="admin == '1'"><i class="fa-solid fa-pen-to-square"></i></button>
         </div>
     </div>
 
@@ -20,7 +20,7 @@
         </div>
         <!-- About Section Button-->
         <div class="text-center mt-4">
-            <a href="{{about.url_CV}}" target="_blank" class="button">Descargar CV</a>
+            <a href="{{about.url_CV}}" target="_blank" class="button">Curriculum Vitae</a>
         </div>
     </div>
 </section>
