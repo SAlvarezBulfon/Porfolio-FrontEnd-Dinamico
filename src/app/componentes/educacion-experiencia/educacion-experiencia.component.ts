@@ -58,6 +58,7 @@ export class EducacionExperienciaComponent implements OnInit {
 
   borrarEstudio(id: number){
     this.estudioService.deleteEstudio(id).subscribe(data => {
+      console.log(id);
       this.toastr.success('Formación académica eliminada correctamente','OK', {
         timeOut: 3000,
       });
@@ -69,7 +70,11 @@ export class EducacionExperienciaComponent implements OnInit {
     } );
   }
 
-  setearIdExp(id: number){
+  setearIdEs(id: number){
     this.estudioService.setId(id);
+  }
+
+  setearIdExp(id: number){
+    this.experienciaService.setId(id);
   }
 }

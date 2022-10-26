@@ -27,6 +27,7 @@ import { AgregarEducacionComponent } from './componentes/agregar-educacion/agreg
 import { AgregarExperienciaComponent } from './componentes/agregar-experiencia/agregar-experiencia.component';
 import { AgregarProyectoComponent } from './componentes/agregar-proyecto/agregar-proyecto.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ToastrModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
