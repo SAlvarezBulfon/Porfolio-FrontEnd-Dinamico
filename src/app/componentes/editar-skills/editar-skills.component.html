@@ -8,19 +8,21 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div class="input-content mb-3 mt-2">
-            <label for="descripcion" class="input-label">Descripción</label>
-            <textarea
-            name="descripcion"
-            cols="0"
-            rows="10"
-            class="input"
-            required
-            minlength="20"></textarea>
-          </div>
-        </div>      
+          <form action="" [formGroup]="editarSkill">
+            <div class="input-content mb-3 mt-2">
+              <label for="description" class="input-label">Descripción</label>
+              <textarea
+              name="description"
+              cols="0"
+              rows="10"
+              class="input"
+              required
+              minlength="20" formControlName="description"></textarea>
+            </div>
+          </form> 
+          </div>     
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Editar</button>
+          <button type="button" class="btn btn-primary" (click)="onUpdate()" >Editar</button>
         </div>
       </div>
     </div>

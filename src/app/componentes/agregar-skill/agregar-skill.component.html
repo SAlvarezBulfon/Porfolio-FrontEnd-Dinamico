@@ -1,0 +1,31 @@
+
+
+<!-- Agregar Skill -->
+<div class="modal fade" id="new-skill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <form class="modal-content" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agrega una nueva skill</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="input-content mb-3 mt-2">
+              <label for="nombre" class="input-label">Skill</label>
+              <input type="text" name="nombre" class="input" required  [(ngModel)]="nombre">
+            </div>
+            <div class="input-content mb-3">
+              <label for="porcentaje" class="input-label">Porcentaje</label>
+              <input type="number" name="porcentaje" class="input" required [(ngModel)]="porcentaje">
+            </div>
+          </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Agregar</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+
+  <!--"[formGroup]="editarPerfil""-->
+  <!-- (click)="onUpdate()" -->

@@ -28,6 +28,7 @@ import { AgregarExperienciaComponent } from './componentes/agregar-experiencia/a
 import { AgregarProyectoComponent } from './componentes/agregar-proyecto/agregar-proyecto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { AgregarSkillComponent } from './componentes/agregar-skill/agregar-skill.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     IndexComponent,
     AgregarEducacionComponent,
     AgregarExperienciaComponent,
-    AgregarProyectoComponent
+    AgregarProyectoComponent,
+    AgregarSkillComponent
   ],
   imports: [
     BrowserModule,

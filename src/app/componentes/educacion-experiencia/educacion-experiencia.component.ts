@@ -21,7 +21,6 @@ export class EducacionExperienciaComponent implements OnInit {
   ngOnInit(): void {
     this.cargarEstudios();
     this.cargarExperiencia();
-    console.log(this.admin);
     this.admin = localStorage.getItem('admin');
   }
 

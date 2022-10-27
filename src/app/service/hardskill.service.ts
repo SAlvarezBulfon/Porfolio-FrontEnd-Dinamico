@@ -13,21 +13,21 @@ export class HardskillService {
     // Métodos del CRUD
 
     //lISTA DE ESTUDIOS
-    public getEstudios(): Observable<Hardskill[]> {
+    public getHardSkills(): Observable<Hardskill[]> {
       return this.HttpClient.get<Hardskill[]>(this.hardskillURL + 'lista');
     }
   
   //añadir un estudio
-    public addEstudio(hardskill: Hardskill): Observable<any>{
+    public addHardSkill(hardskill: Hardskill): Observable<any>{
       return this.HttpClient.post<any>(this.hardskillURL + 'add', hardskill);
     }
 
   //eliminar un estudio
-    public deleteEstudio(id: number): Observable<any>{
+    public deleteHardSkill(id: number): Observable<any>{
       return this.HttpClient.delete<any>(this.hardskillURL + `delete/${id}`);
     }
   //Devuelve un estudio
-    public detailsEstudio(id: number): Observable<Hardskill> {
+    public detailsHardSkill(id: number): Observable<Hardskill> {
       return this.HttpClient.get<Hardskill>(this.hardskillURL + `details/${id}`);
     }
     

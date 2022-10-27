@@ -14,7 +14,6 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarAbout();
-    console.log(this.admin);
     this.admin = localStorage.getItem('admin');
   }
 

@@ -22,7 +22,6 @@ export class ProyectosComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarProyectos();
-    console.log(this.admin);
     this.admin = localStorage.getItem('admin');
   }
   cargarProyectos(){
